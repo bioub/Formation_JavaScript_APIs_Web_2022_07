@@ -4,7 +4,9 @@
 //   }
 // })
 
-require(['./hello', 'jquery'], function(hello, $) {
+require(['./hello'/*, 'jquery'*/], function(hello, $) {
+  'use strict';
+  
   var prenoms = ['Romain', 'Jean', 'Eric'];
 
   for (var i = 0; i < prenoms.length; i++) {

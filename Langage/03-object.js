@@ -82,16 +82,29 @@ var toto = {
 console.log('romain.hello === toto.hello', romain.hello === toto.hello); // false
 
 // Dans ce cas on va plutôt utiliser la syntaxe constructor
-function Contact(name) {
-  this.name = name;
-}
+// function Contact(name) {
+//   this.name = name;
+// }
 
-Contact.prototype.hello = function() {
-  return 'Hello ' + this.name;
-};
+// Contact.prototype.hello = function() {
+//   return 'Hello ' + this.name;
+// };
+
+// peut s'écrire depuis ES2015
+class Contact {
+  constructor(name) {
+    this.name = name;
+  }
+  hello() {
+    return 'Hello ' + this.name;
+  }
+}
 
 var romain = new Contact('Romain');
 var eric = new Contact('Eric');
+
+// aucune garanti que name existe
+// delete romain.name;
 
 console.log('typeof Contact', typeof Contact); // function
 console.log('typeof romain', typeof romain); // object

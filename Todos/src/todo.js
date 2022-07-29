@@ -20,6 +20,11 @@ export function createTodoItem(todo) {
   // Exercice 1 :
   // Créer la checkbox comme dans le commentaire ci-dessus
   // La cocher si todo.completed vaut true
+  const checkboxEl = document.createElement('input');
+  checkboxEl.type = 'checkbox';
+  checkboxEl.className = "todo-completed";
+  checkboxEl.checked = todo.completed;
+  divEl.append(checkboxEl);
 
   const labelEl = document.createElement('label');
   labelEl.innerText = todo.title
@@ -28,6 +33,21 @@ export function createTodoItem(todo) {
   // Exercice 2 :
   // Créer le bouton destroy comme dans le commentaire ci-dessus
   // Au clic de ce bouton supprimer la balise <div class="todo-item"
+  const buttonEl = document.createElement('button');
+  buttonEl.className = 'todo-destroy';
+  buttonEl.innerText = '-';
+  divEl.append(buttonEl);
+
+  buttonEl.addEventListener('click', () => {
+    divEl.remove();
+  });
 
   return divEl;
 }
+
+// ^
+// |
+// |                           addEvent(click)
+// |                           createTodoItem             remove
+// |addEvent(submit)           cbSubmit                   cbDestroy
+// +---------------------------ENTREE---------------------CLICK----->
