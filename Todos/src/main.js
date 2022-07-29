@@ -58,7 +58,7 @@ listEl.addEventListener('click', (event) => {
     const todoItemEl = target.closest('.todo-item');
 
     if (!todoItemEl.classList.contains('deleting')) {
-      todoItemEl.classList.add('deleting')
+      todoItemEl.classList.add('deleting');
       setTimeout(() => {
         todoItemEl.remove();
       }, 1000);
@@ -72,3 +72,17 @@ listEl.addEventListener('click', (event) => {
 // Au click du bouton destroy ajouter la classe "deleting" à la ligne (.todo-item)
 // En utilisant setTimeout supprimer la ligne au bout d'une seconde
 
+// Exercice 7
+// En utilisant fetch (exemple dans les slides)
+// https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
+// Requeter au chargement de la page
+// GET https://jsonplaceholder.typicode.com/todos
+// (transformer le json comme dans la slide)
+// Boucler sur le tableau et appeler la méthode createTodoItem comme
+// aux lignes 18 et 28.
+
+// Exercice 8
+// Ecouter l'événement input de valueEl et stocker
+// dans le localStorage à la clé 'todo-value' la valeur saisie
+// Au chargement de la page remplir le champs avec le contenu
+// du localStorage
