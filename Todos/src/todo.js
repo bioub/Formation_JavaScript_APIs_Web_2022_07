@@ -38,10 +38,6 @@ export function createTodoItem(todo) {
   buttonEl.innerText = '-';
   divEl.append(buttonEl);
 
-  buttonEl.addEventListener('click', () => {
-    divEl.remove();
-  });
-
   return divEl;
 }
 

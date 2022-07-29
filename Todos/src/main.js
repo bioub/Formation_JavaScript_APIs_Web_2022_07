@@ -50,6 +50,22 @@ toggleEl.addEventListener('click', () => {
 // A la place écouter ici le click de listEl, se servir de event.target
 // pour déterminer si click a eu lieu sur le bouton destroy
 // et supprimer la ligne (.todo-item) si c'est le cas
+listEl.addEventListener('click', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todo-destroy')) {
+    const todoItemEl = target.closest('.todo-item');
+
+    if (!todoItemEl.classList.contains('deleting')) {
+      todoItemEl.classList.add('deleting')
+      setTimeout(() => {
+        todoItemEl.remove();
+      }, 1000);
+    }
+  }
+});
+
 
 // Exercice 6
 // Modifier le code de l'exercice 5
