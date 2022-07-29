@@ -41,3 +41,18 @@ toggleEl.addEventListener('click', () => {
     checkboxEl.checked = toggleEl.checked;
   }
 });
+
+// Exercice 5
+// Supprimer le addEventListener du bouton destroy dans todo.js :
+// buttonEl.addEventListener('click', () => {
+//   divEl.remove();
+// });
+// A la place écouter ici le click de listEl, se servir de event.target
+// pour déterminer si click a eu lieu sur le bouton destroy
+// et supprimer la ligne (.todo-item) si c'est le cas
+
+// Exercice 6
+// Modifier le code de l'exercice 5
+// Au click du bouton destroy ajouter la classe "deleting" à la ligne (.todo-item)
+// En utilisant setTimeout supprimer la ligne au bout d'une seconde
+

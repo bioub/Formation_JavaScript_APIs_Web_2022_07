@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cible {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+
+      .cercle {
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        margin: auto;
+        cursor: pointer;
+      }
+
+      .jaune {
+        background-color: yellow;
+        width: 50px;
+        height: 50px;
+      }
+
+      .rouge {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+
+      .bleu {
+        background-color: lightblue;
+        width: 150px;
+        height: 150px;
+      }
+
+      .noir {
+        background-color: black;
+        width: 200px;
+        height: 200px;
+      }
+
+      .blanc {
+        background-color: white;
+        width: 250px;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cible">
+      <div class="cercle blanc">
+        <div class="cercle noir">
+          <div class="cercle bleu">
+            <div class="cercle rouge">
+              <div class="cercle jaune"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const cibleEl = document.querySelector(".cible");
+
+      const eventTypes = [
+        "auxclick",
+        "click",
+        "contextmenu",
+        "dblclick",
+        "mousedown",
+        "mouseenter",
+        "mouseleave",
+        // "mousemove",
+        "mouseout",
+        "mouseover",
+        "mouseup",
+      ];
+
+      for (const eventType of eventTypes) {
+        cibleEl.addEventListener(eventType, (event) => {
+          // event.currentTarget l'endroit où on place le listener (ici cibleEl)
+          // event.target sur les événements qui se propage, l'élément qui déclenche l'événement
+          console.log(
+            eventType,
+            event.target.className,
+            event.currentTarget.className
+          );
+
+          if (eventType === "click") {
+            switch (event.target.className) {
+              case "cercle jaune":
+                console.log("10pt");
+                break;
+              case "cercle rouge":
+                console.log("8pt");
+                break;
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

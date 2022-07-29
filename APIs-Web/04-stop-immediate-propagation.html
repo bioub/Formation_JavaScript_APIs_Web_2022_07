@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cible {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+
+      .cercle {
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        margin: auto;
+        cursor: pointer;
+      }
+
+      .jaune {
+        background-color: yellow;
+        width: 50px;
+        height: 50px;
+      }
+
+      .rouge {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+
+      .bleu {
+        background-color: lightblue;
+        width: 150px;
+        height: 150px;
+      }
+
+      .noir {
+        background-color: black;
+        width: 200px;
+        height: 200px;
+      }
+
+      .blanc {
+        background-color: white;
+        width: 250px;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cible">
+      <div class="cercle blanc">
+        <div class="cercle noir">
+          <div class="cercle bleu">
+            <div class="cercle rouge">
+              <div class="cercle jaune"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const jauneEl = document.querySelector(".jaune");
+      const rougeEl = document.querySelector(".rouge");
+
+      jauneEl.addEventListener("click", (event) => {
+        console.log('jaune bubbling 1');
+      });
+      jauneEl.addEventListener("click", (event) => {
+        event.stopImmediatePropagation();
+        console.log('jaune bubbling 2');
+      });
+      jauneEl.addEventListener("click", (event) => {
+        console.log('jaune bubbling 3');
+      });
+    </script>
+  </body>
+</html>
